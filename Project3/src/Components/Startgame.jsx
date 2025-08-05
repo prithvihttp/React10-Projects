@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Startgame = () => {
+const StartGame = ({toggle}) => {
   return (
     <Container>
         <div>
@@ -8,13 +8,15 @@ const Startgame = () => {
         </div>
         <div className="content">
             <h1>Dice Game</h1>
-            <Button>Play Now</Button>
+            <Button onClick={toggle}>
+                
+                Play Now</Button>
         </div>
     </Container>
   );
 };
 
-export default Startgame;
+export default StartGame;
 
 const Container = styled.div`
 max-width=1180px;

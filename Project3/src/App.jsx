@@ -1,14 +1,19 @@
 
-import Startgame from "./Components/Startgame"
+import { useState } from "react"
+import StartGame from "./Components/Startgame";
+import GamePlay from "./Components/GamePlay";
 
 function App() {
-  
+  const [isGameStarted, setIsGameStarted] = useState(false);
+
+  const toggleGamePlay = () => {
+    setIsGameStarted((prev) => !prev);
+  };
 
   return (
-    <>
-     <Startgame/>
-    </>
-  )
+    <>{isGameStarted ? <GamePlay /> : <StartGame toggle={toggleGamePlay} />}</>
+  );
 }
+
 
 export default App
